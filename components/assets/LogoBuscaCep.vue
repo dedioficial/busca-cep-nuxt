@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-flex tw-gap-1 tw-items-center">
+  <div class="tw-flex tw-gap-1 tw-items-center tw-m-auto">
     <img
       src="/images/logo/logo.png"
       alt="BuscaCEP Logo"

@@ -14,6 +14,7 @@
   @apply tw-min-h-dvh;
   @apply tw-items-center;
   @apply tw-justify-center;
+  @apply tw-p-10;
 }
 
 .wrapper > div {
