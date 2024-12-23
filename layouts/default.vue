@@ -5,7 +5,7 @@
     <HeaderNav />
 
     <div class="content">
-      <div class="tw-flex tw-gap-10 tw-flex-col">
+      <div class="tw-flex tw-gap-10 tw-flex-col tw-py-10">
         <LogoBuscaCep />
         <slot />
       </div>
