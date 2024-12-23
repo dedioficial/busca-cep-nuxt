@@ -1,75 +1,69 @@
-# Nuxt Minimal Starter
+# Busca CEP - NuxtJS Experiment
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## About the Project
 
-## Setup
+This project was developed as an experimental learning experience with NuxtJS framework. Throughout its development, core functionalities and the framework's base color system were explored, allowing for a deeper understanding of its capabilities.
 
-Make sure to install dependencies:
+## Demo
+
+[Check demo here](https://buscacep.mathandrade.com/)
+
+## Features
+
+- Address lookup through CEP (Brazilian postal code)
+- Integration with ViaCep API
+- Google Maps integration for location visualization
+- Responsive design
+
+## Technologies Used
+
+- **Framework:** NuxtJS 3.14
+- **UI Library:** PrimeVue
+- **Styling:** Tailwind CSS
+- **APIs:**
+  - ViaCep (Brazilian postal code service)
+  - Google Maps
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (latest LTS version recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
 
 ```bash
-# npm
+git clone https://github.com/dedioficial/busca-cep-nuxt.git
+```
+
+2. Install dependencies
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
+# or
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+3. Add the Google Maps API Key to the `.env`
 
-Start the development server on `http://localhost:3000`:
+```
+GOOGLE_MAPS_API_KEY=12345
+```
+
+4. Run development server
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
+# or
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Third-Party API Integration
 
-Build the application for production:
+This project integrates with:
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- **ViaCep API:** Used for Brazilian postal code lookup and address information
+- **Google Maps API:** Used for geographic visualization of addresses
