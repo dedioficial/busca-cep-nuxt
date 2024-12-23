@@ -1,7 +1,7 @@
 <template>
   <section class="tw-flex tw-flex-col tw-gap-4 tw-max-w-3xl">
     <h1 class="tw-text-emerald-600 tw-font-bold tw-mb-2 tw-text-2xl">
-      <span class="pi pi-map-marker"></span>
+      <span class="pi pi-map-marker !tw-text-2xl"></span>
       Sobre o BuscaCEP
     </h1>
 

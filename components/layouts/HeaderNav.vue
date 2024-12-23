@@ -8,7 +8,7 @@
     </nav>
     <p>
       <a href="https://github.com/dedioficial/busca-cep-nuxt/" target="_blank">
-        <span class="pi pi-github tw-text-2xl"></span
+        <span class="pi pi-github !tw-text-2xl"></span
       ></a>
     </p>
   </header>

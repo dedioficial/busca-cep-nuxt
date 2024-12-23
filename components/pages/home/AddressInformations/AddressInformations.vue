@@ -30,7 +30,7 @@ const handleOnBack = () => {
 <template>
   <div class="tw-text-2xl tw-text-gray-700 tw-font-light">
     <h2 class="tw-text-emerald-600 tw-font-bold tw-mb-2">
-      <span class="pi pi-map-marker"></span>
+      <span class="pi pi-map-marker !tw-text-2xl"></span>
       Endereço encontrado!
     </h2>
 

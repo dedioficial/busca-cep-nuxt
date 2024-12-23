@@ -18,7 +18,7 @@ const resetSelectedAddress = () => {
   <template v-else>
     <div v-if="!selectedAddress" class="tw-flex tw-flex-col tw-gap-4">
       <h2 class="tw-text-emerald-600 tw-font-bold tw-text-center tw-text-2xl">
-        <span class="pi pi-map-marker"></span>
+        <span class="pi pi-map-marker !tw-text-2xl"></span>
         Endereços encontrados!
       </h2>
       <p class="tw-text-sm tw-text-gray-500 tw-text-center tw-mb-5">
