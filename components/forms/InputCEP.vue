@@ -24,6 +24,7 @@ const cep = ref("");
       :id="id"
       :name
       :class="className"
+      default-value=""
       v-bind="props"
       mask="99999-999"
     />

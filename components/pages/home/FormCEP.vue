@@ -6,6 +6,7 @@ import { cepSchema } from "~/utils/zodSchemas/cep";
 
 const emit = defineEmits<{
   change: [cep: string];
+  reset: [];
 }>();
 
 const resolver = ref(zodResolver(cepSchema));
@@ -18,6 +19,17 @@ const handleOnSubmit = (event: FormSubmitEvent) => {
   if (!event.valid) return;
 
   emit("change", event.values?.cep);
+};
+
+const handleOnReset = async () => {
+  formSubmited.value = false;
+  await new Promise<void>((resolve) =>
+    setTimeout(() => {
+      (document.getElementById("cep") as HTMLInputElement).value = "";
+      resolve();
+    }, 1)
+  );
+  emit("reset");
 };
 </script>
 
@@ -51,5 +63,16 @@ const handleOnSubmit = (event: FormSubmitEvent) => {
     </div>
 
     <Button label="Buscar" class="tw-w-full tw-mt-2" type="submit" />
+
+    <Button
+      label="Reiniciar"
+      class="tw-w-fit tw-ms-auto !tw-py-1- !tw-text-xs"
+      variant="outlined"
+      @click="
+        () => {
+          handleOnReset().then($form.reset);
+        }
+      "
+    />
   </Form>
 </template>

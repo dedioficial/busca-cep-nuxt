@@ -13,6 +13,7 @@ export type Address = {
 
 const emit = defineEmits<{
   change: [address: Address];
+  reset: [];
 }>();
 
 const formValues = reactive({
@@ -31,6 +32,14 @@ const handleOnSubmit = (event: FormSubmitEvent) => {
   if (!event.valid) return;
 
   emit("change", event.values as Address);
+};
+
+const handleOnReset = () => {
+  formSubmited.value = false;
+  formValues.estado = "";
+  formValues.localidade = "";
+  formValues.logradouro = "";
+  emit("reset");
 };
 </script>
 
@@ -52,6 +61,7 @@ const handleOnSubmit = (event: FormSubmitEvent) => {
           v-model="formValues.estado"
           :options="brazilianStates"
           optionLabel="name"
+          default-value=""
           optionValue="code"
           id="estado"
           name="estado"
@@ -74,6 +84,8 @@ const handleOnSubmit = (event: FormSubmitEvent) => {
         <InputText
           id="localidade"
           name="localidade"
+          v-model="formValues.localidade"
+          default-value=""
           class="tw-w-full"
           :invalid="$form?.localidade?.invalid"
         />
@@ -94,6 +106,8 @@ const handleOnSubmit = (event: FormSubmitEvent) => {
         <InputText
           id="logradouro"
           name="logradouro"
+          v-model="formValues.logradouro"
+          default-value=""
           class="tw-w-full"
           :invalid="$form?.logradouro?.invalid"
         />
@@ -111,5 +125,17 @@ const handleOnSubmit = (event: FormSubmitEvent) => {
     </div>
 
     <Button label="Buscar" class="tw-w-full tw-mt-3" type="submit" />
+
+    <Button
+      label="Reiniciar"
+      class="tw-w-fit tw-ms-auto !tw-py-1- !tw-text-xs"
+      variant="outlined"
+      @click="
+        () => {
+          handleOnReset();
+          $form.reset();
+        }
+      "
+    />
   </Form>
 </template>

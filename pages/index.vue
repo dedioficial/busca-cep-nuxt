@@ -25,9 +25,11 @@ const handleAddressChange = (address: Address) => {
   };
 };
 
-watch(router, () => {
+const handleResetForm = () => {
   currentValue.value = null;
-});
+};
+
+watch(router, handleResetForm);
 </script>
 
 <template>
@@ -46,8 +48,16 @@ watch(router, () => {
       Buscar por
     </div>
     <Tabs :tabs="['CEP', 'Rua']" v-slot="{ tab }">
-      <FormCEP v-if="tab === 0" @change="handleCEPChange" />
-      <FormAddress v-else-if="tab === 1" @change="handleAddressChange" />
+      <FormCEP
+        v-if="tab === 0"
+        @change="handleCEPChange"
+        @reset="handleResetForm"
+      />
+      <FormAddress
+        v-else-if="tab === 1"
+        @change="handleAddressChange"
+        @reset="handleResetForm"
+      />
     </Tabs>
   </div>
 
