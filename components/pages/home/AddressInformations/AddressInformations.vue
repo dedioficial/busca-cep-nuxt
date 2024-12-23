@@ -3,6 +3,7 @@ import type { Address } from "~/api/viaCEP";
 
 interface AddressInformationsProps {
   address: Address;
+  backButton?: boolean;
 }
 
 const props = defineProps<AddressInformationsProps>();
@@ -16,6 +17,14 @@ const keysVisible = {
 };
 
 const keyArrays = Object.keys(keysVisible);
+
+const emit = defineEmits<{
+  back: [];
+}>();
+
+const handleOnBack = () => {
+  emit("back");
+};
 </script>
 
 <template>
@@ -27,15 +36,29 @@ const keyArrays = Object.keys(keysVisible);
 
     <table>
       <template v-for="key of keyArrays">
-        <tr v-if="address?.[key as keyof Address]" class="tw-items-center">
+        <tr
+          v-if="props.address?.[key as keyof Address]"
+          class="tw-items-center"
+        >
           <td class="tw-text-xs">
             {{ keysVisible[key as keyof typeof keysVisible] }}
           </td>
           <td class="tw-ps-3 max-md:tw-text-lg">
-            {{ address[key as keyof Address] }}
+            {{ props.address[key as keyof Address] }}
           </td>
         </tr>
       </template>
     </table>
+
+    <Button
+      variant="outlined"
+      severity="secondary"
+      label="Voltar a lista"
+      icon="pi pi-angle-left"
+      class="!tw-py-0 !tw-mt-3"
+      size="small"
+      v-if="props.backButton"
+      @click="handleOnBack"
+    />
   </div>
 </template>

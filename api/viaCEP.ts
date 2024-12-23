@@ -4,6 +4,10 @@ export const getCEPUrl = (cep: string | null) => {
   return `https://viacep.com.br/ws/${cep?.replace(/\-/g, "")}/json/`;
 };
 
+export const getAddressURL = (address: Address) => {
+  return `https://viacep.com.br/ws/${address.estado}/${address.localidade}/${address.logradouro}/json/`;
+};
+
 export type Address = {
   cep?: string;
   logradouro?: string;
