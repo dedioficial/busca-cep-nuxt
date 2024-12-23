@@ -36,11 +36,10 @@ watch(route, () => {
   @apply tw-grid;
   @apply tw-rounded-full;
   @apply tw-bg-emerald-900;
-  @apply tw-text-white;
   @apply tw-text-center;
   @apply tw-items-center;
   @apply tw-overflow-hidden;
-  @apply tw-mb-5;
+  @apply tw-mb-10;
   @apply tw-w-fit;
 }
 
@@ -48,6 +47,7 @@ watch(route, () => {
   @apply tw-px-5;
   @apply tw-py-1;
   @apply tw-transition-all;
+  @apply !tw-text-white;
 }
 
 .tabs > a:hover,

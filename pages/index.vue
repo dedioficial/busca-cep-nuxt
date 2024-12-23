@@ -47,7 +47,7 @@ watch(router, handleResetForm);
     <div class="tw-text-sm tw-text-gray-500 tw-text-center tw-mb-1">
       Buscar por
     </div>
-    <Tabs :tabs="['CEP', 'Rua']" v-slot="{ tab }">
+    <Tabs :tabs="['CEP', 'Logradouro']" v-slot="{ tab }">
       <FormCEP
         v-if="tab === 0"
         @change="handleCEPChange"
