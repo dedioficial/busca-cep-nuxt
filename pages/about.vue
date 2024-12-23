@@ -34,3 +34,19 @@
     </p>
   </section>
 </template>
+
+<script lang="ts" setup>
+const meta = {
+  title: "Sobre o BuscaCEP",
+  description: "O que é o BuscaCEP? Entenda por quê o BuscaCEP foi criado!",
+};
+
+useHead({
+  title: meta.title,
+  meta: [
+    { name: "description", content: meta.description },
+    { name: "og:title", content: meta.title },
+    { name: "og:description", content: meta.description },
+  ],
+});
+</script>
